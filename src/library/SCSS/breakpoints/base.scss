@@ -1,0 +1,260 @@
+body {
+    color: $gray;
+    background-color: $white;
+}
+
+
+.App{
+    height: 100vh;
+    overflow: auto;
+    max-height: calc(100vh - 50px);
+    box-sizing: border-box;
+    position: relative;
+    overflow-y: hidden;
+    left: 0;
+    top: 0;
+}
+
+.App-header {
+    height: $col-lg-3;
+    position: absolute;
+    z-index: 1;
+    width: $col-lg-24;
+    #HeaderNav {
+        text-align: right;
+        width: $col-lg-24;
+        background-color: $blue;
+        .scoreKeeper {
+            float: left;
+            margin-top: 15px;
+            margin-left: $col-lg-1;
+            font-size: 20px;
+        }
+        .rangeslider {
+            width: 90%;
+            float: left;
+            height: 10px;
+            border-radius: 5px;
+            background: $blue;
+            height: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top:10px;
+        }
+        .button {
+            background-color: $blue;
+            padding: 20px;
+            color: $white;
+            border: none;
+            box-shadow: none;
+            &:hover,
+            &:focus {
+                color: $blue;
+                background-color: $white;
+                transition: $baseTransition;
+            }
+        }
+    }
+}
+
+.ContentScrollingspeed1{
+    transition:20s;
+}
+
+.ContentScrollingspeed2{
+    transition:15s;
+}
+.ContentScrollingspeed3{
+    transition:10s;
+}
+.ContentScrollingspeed4{
+    transition:5s;
+}
+
+.ContentScrolling,
+.ContentScrollingspeed1,
+.ContentScrollingspeed2,
+.ContentScrollingspeed3,
+.ContentScrollingspeed4{
+    top:100vh;
+    width: $col-lg-24;
+    color: $black;
+    height: 80vh;
+    padding-top: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position:absolute;
+    
+
+    #circle {
+        border: 2px solid $black;
+        border-radius: 50px;
+        margin: 0 auto;
+        background-color: transparent;
+        transition: .5s;
+    }
+    }
+
+.Content {
+    width: $col-lg-24;
+    color: $black;
+    height: 80vh;
+    padding-top: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position:absolute;
+    top:-80vh;
+    overflow:hidden;
+    
+
+    #circle {
+        border: 2px solid $black;
+        border-radius: 50px;
+        margin: 0 auto;
+        background-color: transparent;
+        transition: .5s;
+    }
+}
+
+@for $i from 1 through 6 {
+    .circle-#{$i} {
+        width: 10px * $i!important;
+        height: 10px * $i!important;
+        position: absolute;
+        left: 10% * $i!important;
+        top: 10% * $i!important;
+    }
+}
+
+@for $i from 6 through 13 {
+    .circle-#{$i} {
+        width: 5px * $i!important;
+        height: 5px * $i!important;
+        position: absolute;
+        right: 5% * $i!important;
+        bottom:10% * $i!important;
+        border-radius:50px;
+    }
+}
+
+.footer {
+    width: $col-lg-24;
+    background-color: $white;
+    text-align: center;
+    color: $black;
+    float: left;
+    .footerColumn {
+        background-color: $white;
+        height: auto;
+        color: $black;
+        width: $col-lg-22;
+        margin: $marginCenter;
+        font-size: $headlineFont;
+        text-align: center;
+        border: 1px solid $black;
+    }
+}
+
+
+/*********************
+LINK STYLES
+*********************/
+
+a,
+a:visited {
+    color: $link-color;
+    /* on hover */
+    &:hover,
+    &:focus {
+        color: $link-hover;
+    }
+    /* on click */
+    &:active {}
+    /* mobile tap color */
+    &:link {
+        /*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+        -webkit-tap-highlight-color: rgba( 0, 0, 0, 0.3);
+    }
+}
+
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+    text-rendering: optimizelegibility;
+    font-weight: 500;
+    /*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+    /* removing text decoration from all headline links */
+    a {
+        text-decoration: none;
+    }
+}
+
+h1,
+.h1 {
+    font-size: 2.5em;
+    line-height: 1.333em;
+    font-family: $opensans;
+}
+
+h2,
+.h2 {
+    font-size: 1.75em;
+    line-height: 1.4em;
+    margin-bottom: 0.375em;
+}
+
+h3,
+.h3 {
+    font-size: 1.125em;
+}
+
+h4,
+.h4 {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+h5,
+.h5 {
+    font-size: 0.846em;
+    line-height: 2.09em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+input[type=range] {
+    -webkit-appearance: none; 
+    width: 100%;
+    background: transparent; 
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid $blue;
+    height: 45px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+   
+    box-shadow: 1px 1px 1px $black, 0px 0px 1px $black; 
+  }
